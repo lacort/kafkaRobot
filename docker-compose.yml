@@ -1,0 +1,21 @@
+##################################################################
+# Dockercomposer to build Robot Kafka                     
+# INSTALL DOCKER COMPOSE: https://docs.docker.com/compose/install/
+##################################################################
+
+version: '3'
+services:
+  kafkaRobot:
+    container_name: kafkaRobot
+    tty: true
+    # command: npm start
+    image: nextqs/next.nodejs
+    working_dir: /var/app
+    ports:
+      - 8080:80
+      - 9229:9229
+    volumes:
+      - ../kafkaRobot:/var/app
+    
+
+  
