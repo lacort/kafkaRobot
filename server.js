@@ -25,16 +25,25 @@ if(intChoice == 1){
   } 
 
 }
+function random(){
+  const arrayChar = ['A','B','C']
+  return arrayChar[Math.floor(
+    Math.random() * (2 - 0 + 1) + 0
+  )]
 
-function rapist(intCount){
+}
+async function rapist(intCount){
   for(let i=0; i<intCount; i++){
+    let strChar = random()
+   
     modelKafka = new ModelKafka({
       _id: new ObjectID(),
       order: i,
-      timeStamp: new Date().toISOString()
+      timeStamp: new Date().toISOString(),
+      char: strChar 
     })
-  
-    modelKafka.save()
+    
+    await modelKafka.save()
   
   }
   

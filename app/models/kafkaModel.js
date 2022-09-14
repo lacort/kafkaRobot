@@ -10,7 +10,8 @@ const KafkaSchema = new Schema({
     type: ObjectId
   },
   order: Number,
-  timeStamp: Date
+  timeStamp: Date,
+  char: String
 }, {
   versionKey: false
 })
