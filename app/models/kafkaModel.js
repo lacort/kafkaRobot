@@ -10,11 +10,12 @@ const KafkaSchema = new Schema({
     type: ObjectId
   },
   order: Number,
-  timeStamp: Date,
   char: String
 }, {
-  versionKey: false
+  versionKey: false,
+  timestamps: true
 })
+KafkaSchema.index({createdAt: 1},{expireAfterSeconds: 3600});
 
 const Model = mongodbKafka.model('kafka', KafkaSchema, 'default')
 

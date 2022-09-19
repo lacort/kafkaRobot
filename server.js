@@ -14,7 +14,7 @@ const prompt = require('prompt-sync')({sigint: true});
 const intChoice = prompt('Choose mode (1) -> Rapist Mode (2) -> Stupid Rapist Mode: ')
 
 if(intChoice == 1){
-  num = prompt('Choose a number of records: ')
+  const num = prompt('Choose a number of records: ')
   rapist(num)
   
 }else{
@@ -39,7 +39,6 @@ async function rapist(intCount){
     modelKafka = new ModelKafka({
       _id: new ObjectID(),
       order: i,
-      timeStamp: new Date().toISOString(),
       char: strChar 
     })
     
